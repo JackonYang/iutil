@@ -18,3 +18,14 @@ def test_url2pdf_ok():
 
     assert res == 0
     assert filename == os.path.join(FILE_PATH, expect)
+
+
+def test_url2pdf_image():
+    # my blog, no referrer check in images
+    url = 'http://jackonyang.github.io/blog/2013/05/25/javascript-primer/'
+    expect = '577a8b0d2cb6ec2c54683db44fa29db7.pdf'  # filename
+
+    res, filename = url2pdf(url, out_dir=FILE_PATH)
+
+    assert res == 0
+    assert filename == os.path.join(FILE_PATH, expect)

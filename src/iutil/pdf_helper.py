@@ -20,7 +20,7 @@ Mac:
 wkhtmltopdf https://www.baidu.com/ baidu.pdf
 """
 import os
-import sys
+# import sys
 import subprocess
 
 from iutil.hashes import (
@@ -28,14 +28,16 @@ from iutil.hashes import (
 )
 
 
-cmd_url2pdf_choices = {
-    'linux': 'xvfb-run -- wkhtmltopdf --quiet'.split(),  # ubuntu 18.04
-    'darwin': 'wkhtmltopdf --log-level none'.split(),  # Mac
-}
+# cmd_url2pdf_choices = {
+#     'linux': 'wkhtmltopdf --log-level none'.split(),  # ubuntu 18.04
+#     'darwin': 'wkhtmltopdf --log-level none'.split(),  # Mac
+# }
 
-platform = sys.platform
+# platform = sys.platform
 
-cmd_url2pdf = cmd_url2pdf_choices[platform]
+# cmd_url2pdf = cmd_url2pdf_choices[platform]
+
+cmd_url2pdf = 'wkhtmltopdf --log-level none'.split()
 
 
 def url2pdf(url, out_dir='.', out_filename=None):
