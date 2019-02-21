@@ -12,8 +12,8 @@ from setuptools import setup
 
 
 setup(name='iutil',
-      version='0.0.1',
-      description=('placeholder version'),
+      version='0.1',
+      description=('common utils across projects'),
       url='https://github.com/JackonYang/iutil',
       author='Jackon Yang',
       author_email='i@jackon.me',
