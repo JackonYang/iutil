@@ -29,8 +29,8 @@ from iutil.hashes import (
 
 
 cmd_url2pdf_choices = {
-    'linux': 'xvfb-run -- wkhtmltopdf',  # ubuntu 18.04
-    'darwin': 'wkhtmltopdf',  # Mac
+    'linux': 'xvfb-run -- wkhtmltopdf --quiet'.split(),  # ubuntu 18.04
+    'darwin': 'wkhtmltopdf --log-level none'.split(),  # Mac
 }
 
 platform = sys.platform
@@ -45,7 +45,7 @@ def url2pdf(url, out_dir='.', out_filename=None):
 
     out_file = os.path.join(out_dir, out_filename)
 
-    full_cmd = [cmd_url2pdf, '--log-level', 'none', url, out_file]
+    full_cmd = cmd_url2pdf + [url, out_file]
     # print(' '.join(full_cmd))
     res = subprocess.call(full_cmd)
 
