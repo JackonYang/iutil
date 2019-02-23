@@ -18,8 +18,12 @@ install:
 
 
 test:
+	FAST_MODE=true pytest .
+
+test-all:
 	pytest .
 
+
 .PHONY: build upload install
-.PHONY: test
+.PHONY: test test-all
 .PHONY: dev-setup
