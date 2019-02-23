@@ -2,6 +2,7 @@
 from iutil.datestr import (
     today,
     yesterday,
+    readable_now,
 )
 
 
@@ -33,3 +34,15 @@ def test_day_formatter():
     assert len(t_yesterday) == len(formatter) + 2
 
     assert t_today > t_yesterday
+
+
+def test_readable_now():
+
+    t1 = readable_now()
+
+    assert len(t1) == len('2019-02-23 21:23:38')
+
+    formatter = '%Y%m%d_%H%M%S'
+    t2 = readable_now(formatter=formatter)
+
+    assert len(t2) == len(formatter) + 2
