@@ -12,7 +12,7 @@ from setuptools import setup
 
 
 setup(name='iutil',
-      version='0.1.2',
+      version='0.1.3',
       description=('common utils across projects'),
       url='https://github.com/JackonYang/iutil',
       author='Jackon Yang',
